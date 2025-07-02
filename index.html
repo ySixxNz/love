@@ -16,15 +16,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>Sabia que eu te amo?</title>
+<title>Para Sempre em Minha Alma</title>
 <style>
+#memorial {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 9999;
+  font-family: Arial, sans-serif;
+}
+#memorial img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 2px solid #fff;
+}
+#memorial .data {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+#memorial .msg {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 15px 0;
+  max-width: 280px;
+}
+#memorial .btn-site {
+  padding: 10px 25px;
+  background: transparent;
+  color: white;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  transition: 0.2s;
+}
+#memorial .btn-site:active {
+  background: rgba(255,255,255,0.1);
+}
+
+/* SITE ORIGINAL (100% INTACTO) */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
-
 body {
   font-family: 'Arial', sans-serif;
   background: linear-gradient(135deg, #ff6b8b, #ff8e53);
@@ -38,7 +87,6 @@ body {
   position: relative;
   color: white;
 }
-
 .container {
   text-align: center;
   padding: 20px;
@@ -48,7 +96,6 @@ body {
   z-index: 10;
   transition: all 0.5s ease;
 }
-
 .home-image {
   width: 200px;
   height: 200px;
@@ -60,11 +107,9 @@ body {
   border: 3px solid rgba(255,255,255,0.5);
   transition: transform 0.3s ease;
 }
-
 .home-image:hover {
   transform: scale(1.03);
 }
-
 h1 {
   font-size: 2rem;
   margin-bottom: 30px;
@@ -76,7 +121,6 @@ h1 {
   color: transparent;
   padding: 10px;
 }
-
 .buttons {
   display: flex;
   flex-direction: column;
@@ -86,7 +130,6 @@ h1 {
   align-items: center;
   width: 100%;
 }
-
 .btn {
   padding: 16px 30px;
   border: none;
@@ -105,21 +148,18 @@ h1 {
   user-select: none;
   -webkit-user-select: none;
 }
-
 .btn-yes {
   background: linear-gradient(145deg, #4caf50, #8bc34a);
   color: white;
   text-shadow: 0 2px 4px rgba(0,0,0,0.2);
   border: 2px solid rgba(255,255,255,0.3);
 }
-
 .btn-no {
   background: linear-gradient(145deg, #f44336, #ff5722);
   color: white;
   text-shadow: 0 2px 4px rgba(0,0,0,0.2);
   border: 2px solid rgba(255,255,255,0.3);
 }
-
 .btn-back {
   background: linear-gradient(145deg, #9c27b0, #e91e63);
   color: white;
@@ -129,7 +169,6 @@ h1 {
   position: relative;
   overflow: hidden;
 }
-
 .btn-back::before {
   content: '';
   position: absolute;
@@ -137,23 +176,16 @@ h1 {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(
-    to bottom right,
-    rgba(255,255,255,0.3),
-    rgba(255,255,255,0)
-  );
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.3), rgba(255,255,255,0));
   transform: rotate(30deg);
   transition: all 0.5s ease;
 }
-
 .btn-back:hover::before {
   left: 100%;
 }
-
 .btn:active {
   transform: scale(0.96);
 }
-
 .hidden {
   opacity: 0;
   pointer-events: none;
@@ -164,7 +196,6 @@ h1 {
   right: 0;
   transition: all 0.5s ease;
 }
-
 .visible {
   opacity: 1;
   pointer-events: all;
@@ -172,7 +203,6 @@ h1 {
   position: relative;
   transition: all 0.5s ease;
 }
-
 .result {
   margin-top: 20px;
   background: rgba(255,255,255,0.15);
@@ -183,7 +213,6 @@ h1 {
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   width: 100%;
 }
-
 .result img {
   width: 180px;
   height: 180px;
@@ -196,7 +225,6 @@ h1 {
   transform: rotate(-5deg);
   animation: pulse 2s infinite ease-in-out;
 }
-
 .result p {
   font-size: 1.3rem;
   margin-top: 15px;
@@ -206,13 +234,8 @@ h1 {
   backdrop-filter: blur(5px);
   line-height: 1.4;
   color: white;
-  text-shadow:
-  -1px -1px 1px rgba(0, 0, 0, 0.5),
-  1px -1px 1px rgba(0, 0, 0, 0.5),
-  -1px 1px 1px rgba(0, 0, 0, 0.5),
-  1px 1px 1px rgba(0, 0, 0, 0.5);
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.5), 1px -1px 1px rgba(0, 0, 0, 0.5), -1px 1px 1px rgba(0, 0, 0, 0.5), 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
-
 .hearts {
   position: absolute;
   width: 100%;
@@ -221,7 +244,6 @@ h1 {
   z-index: 1;
   overflow: hidden;
 }
-
 .heart {
   position: absolute;
   font-size: 20px;
@@ -230,7 +252,6 @@ h1 {
   filter: drop-shadow(0 0 5px rgba(255,0,102,0.7));
   will-change: transform, opacity;
 }
-
 .particles {
   position: absolute;
   width: 100%;
@@ -241,7 +262,6 @@ h1 {
   pointer-events: none;
   overflow: hidden;
 }
-
 .particle {
   position: absolute;
   border-radius: 50%;
@@ -249,7 +269,6 @@ h1 {
   filter: drop-shadow(0 0 5px #ff0066);
   will-change: transform;
 }
-
 .floating-text {
   position: absolute;
   font-size: 1.1rem;
@@ -259,35 +278,29 @@ h1 {
   font-weight: bold;
   will-change: transform, opacity;
 }
-
 @keyframes float {
   0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
   100% { transform: translateY(-100vh) rotate(360deg) scale(1); opacity: 0; }
 }
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes pulse {
   0% { transform: scale(1) rotate(-5deg); }
   50% { transform: scale(1.05) rotate(-3deg); }
   100% { transform: scale(1) rotate(-5deg); }
 }
-
 @keyframes floatText {
   0% { transform: translateY(0) rotate(0deg); opacity: 0; }
   10% { opacity: 1; }
   90% { opacity: 1; }
   100% { transform: translateY(-250px) rotate(15deg); opacity: 0; }
 }
-
 @keyframes textGlow {
   0%, 100% { text-shadow: 0 0 15px rgba(255,102,153,0.8), 0 0 25px rgba(255,0,102,0.6); }
   50% { text-shadow: 0 0 20px rgba(255,102,153,1), 0 0 40px rgba(255,0,102,0.8); }
 }
-
 @keyframes heartbeat {
   0% { transform: scale(1); }
   14% { transform: scale(1.1); }
@@ -295,28 +308,36 @@ h1 {
   42% { transform: scale(1.1); }
   70% { transform: scale(1); }
 }
-
 .btn-hover-effect {
   animation: heartbeat 0.8s ease-out;
 }
-
 @keyframes btnPulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
-
 .btn-pulse {
   animation: btnPulse 2s infinite;
 }
 </style>
 </head>
 <body>
+<div id="memorial">
+  <img src="coreana.jpg" alt="Triste">
+  <div class="data">13/03/2025 - 05/06/2025</div>
+  <div class="msg">
+    <p>Foram os 3 meses mais felizes da minha vida</p>
+    <p>Eu te amo com toda minha alma 🤍</p>
+    <p>Nunca vou te esquecer</p>
+  </div>
+  <button class="btn-site" onclick="document.getElementById('memorial').style.display='none'">Ir para o site</button>
+</div>
+
 <div class="hearts" id="hearts"></div>
 <div class="particles" id="particles"></div>
 <div class="container">
    <div id="question" class="visible">
-      <img src="home.jpg" alt="Nós dois" class="home-image">
+      <img src="home.jpg" alt="Inicio" class="home-image">
       <h1>Sabia que eu te amo?</h1>
       <div class="buttons" id="btnContainer">
          <button class="btn btn-yes btn-pulse" id="btnYes">Tbm te amo ❤️</button>
@@ -350,10 +371,9 @@ document.addEventListener('DOMContentLoaded', function() {
    const maxHearts = 25;
    let activeTexts = 0;
    const maxTexts = 12;
-
+   
    function createHearts() {
       if (activeHearts >= maxHearts) return;
-      
       const heart = document.createElement('div');
       heart.classList.add('heart');
       heart.innerHTML = '❤️';
@@ -363,13 +383,12 @@ document.addEventListener('DOMContentLoaded', function() {
       heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
       heartsContainer.appendChild(heart);
       activeHearts++;
-      
       setTimeout(() => {
          heart.remove();
          activeHearts--;
       }, parseFloat(heart.style.animationDuration) * 1000);
    }
-
+   
    function createParticles() {
       const particlesContainer = document.getElementById('particles');
       for(let i = 0; i < 15; i++) {
@@ -385,10 +404,9 @@ document.addEventListener('DOMContentLoaded', function() {
          particlesContainer.appendChild(p);
       }
    }
-
+   
    function createFloatingText(text, x) {
       if (activeTexts >= maxTexts) return;
-      
       const t = document.createElement('div');
       t.classList.add('floating-text');
       t.textContent = text || loveWords[0];
@@ -399,22 +417,21 @@ document.addEventListener('DOMContentLoaded', function() {
       t.style.color = `hsl(${Math.random() * 60 + 330}, 100%, 70%)`;
       document.body.appendChild(t);
       activeTexts++;
-      
       setTimeout(() => {
          t.remove();
          activeTexts--;
       }, parseFloat(t.style.animationDuration) * 1000);
    }
-
+   
    function btnYesEffect() {
       btnYes.classList.add('btn-hover-effect');
       setTimeout(() => { btnYes.classList.remove('btn-hover-effect'); }, 800);
    }
-
+   
    btnYes.addEventListener('mousedown', function(e) { e.preventDefault(); });
    btnNo.addEventListener('mousedown', function(e) { e.preventDefault(); });
    btnBack.addEventListener('mousedown', function(e) { e.preventDefault(); });
-
+   
    btnYes.addEventListener('click', function(e) {
       e.preventDefault();
       yippeeAudio.play();
@@ -425,20 +442,17 @@ document.addEventListener('DOMContentLoaded', function() {
       answer.classList.add('visible');
       resultImg.src = 'heart.jpg';
       answerText.textContent = "Te amo muito Soso! Você é a doidinha que mora no meu coração e faz tudo brilhar ❤️️";
-      
       heartsContainer.innerHTML = '';
       activeHearts = 0;
       activeTexts = 0;
-      
       for(let i = 0; i < 10; i++) {
          setTimeout(() => { createFloatingText(); }, i * 300);
       }
-      
       if(window.navigator.vibrate) {
          window.navigator.vibrate([100, 50, 100, 50, 200]);
       }
    });
-
+   
    btnNo.addEventListener('click', function(e) {
       e.preventDefault();
       punpinAudio.play();
@@ -448,14 +462,12 @@ document.addEventListener('DOMContentLoaded', function() {
       question.classList.add('hidden');
       answer.classList.remove('hidden');
       answer.classList.add('visible');
-      
       activeTexts = 0;
-      
       for(let i = 0; i < 12; i++) {
-         setTimeout(() => { createFloatingText("Te amo!", window.innerWidth/2); }, i * 300);
+         setTimeout(() => { createFloatingText("Te amo!", window.innerWidth / 2); }, i * 300);
       }
    });
-
+   
    btnBack.addEventListener('click', function(e) {
       e.preventDefault();
       answer.classList.remove('visible');
@@ -463,13 +475,13 @@ document.addEventListener('DOMContentLoaded', function() {
       question.classList.remove('hidden');
       question.classList.add('visible');
    });
-
+   
    btnYes.addEventListener('mouseover', btnYesEffect);
    
    heartsInterval = setInterval(createHearts, 800);
    createParticles();
    
-   for(let i = 0; i < 3; i++) {
+   for (let i = 0; i < 3; i++) {
       setTimeout(() => { createFloatingText(); }, i * 1200);
    }
 });
